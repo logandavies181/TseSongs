@@ -1,0 +1,10 @@
+{
+  "imports": {
+    "@cliffy/command": "jsr:@cliffy/command@^1.1.0",
+    "@std/yaml": "jsr:@std/yaml@^1.1.0"
+  },
+  "fmt": {
+    "lineWidth": 120,
+    "semiColons": false
+  }
+}
