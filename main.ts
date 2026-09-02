@@ -68,7 +68,7 @@ const lead: Chord[] = [
   o(gs4, 0.5, 0.25),
   r(0.5),
 ]
-b.pushChordsMany(2, 8, "lead", lead, 0.4)
+b.pushChordsMany(2, 8, "lead", lead, 0.3)
 
 // half pitch
 const hp = (p: Pitch): Pitch => {
@@ -130,7 +130,6 @@ const bass: Chord[] = [
 
   r(8),
 ]
-
 b.pushChordsMany(1, 0, "bass", bass, 0.3)
 
 run(b)

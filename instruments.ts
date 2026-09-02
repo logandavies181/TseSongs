@@ -64,7 +64,7 @@ export function registerInstruments(b: Builder): void {
         detune: 1.00002,
         pan: 0.7,
       })
-      .addEnvelope("mxadsr iDur/2, 1, 0.6, 2")
+      .addEnvelope("mxadsr iDur/2, 1, 0.2, 2")
       .addFilter("tonex", "iFreq*10")
       .addFilter("clip", "0, 0.5")
   })
