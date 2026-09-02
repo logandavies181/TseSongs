@@ -1,11 +1,11 @@
-import { Builder, c, Chord, o, r, run } from "../tsesound/index.ts"
+import { Builder, c, Chord, o, Pitch, r, run } from "../tsesound/index.ts"
 
 import { registerInstruments } from "./instruments.ts"
 
 const b = new Builder()
 
 registerInstruments(b)
-b.addBars(60, 4, 19)
+b.addBars(60, 4, 25)
 
 const emaj = [e3, gs3, b3]
 const bmaj = [b2, ds3, fs3]
@@ -15,24 +15,18 @@ const amaj = [a3, cs4, e4]
 
 const chords: Chord[] = [
   c(emaj, 4, 0.8),
-
   c(bmaj, 4, 0.8),
-
   c(csmin, 4, 0.8),
-
   c(gsmaj, 4, 0.8),
 
   //
 
   c(emaj, 4, 0.8),
-
   c(bmaj, 4, 0.8),
-
   c(csmin, 4, 0.8),
-
   c(amaj, 4, 0.8),
 ]
-b.pushChordsMany(2, 0, "rhythm", chords, 0.5)
+b.pushChordsMany(3, 0, "rhythm", chords, 0.5)
 
 const lead: Chord[] = [
   // Offset to sit behind the beat
@@ -72,7 +66,71 @@ const lead: Chord[] = [
   o(a4, 1, 0.1),
 
   o(gs4, 0.5, 0.25),
+  r(0.5),
 ]
-b.pushChordsMany(1, 8, "lead", lead, 0.5)
+b.pushChordsMany(2, 8, "lead", lead, 0.4)
+
+// half pitch
+const hp = (p: Pitch): Pitch => {
+  const ret = p.clone()
+  ret.frequency = p.frequency / 2
+  return ret
+}
+
+const bass: Chord[] = [
+  r(0.1),
+
+  r(2),
+  o(hp(emaj[1]), 1),
+  o(hp(emaj[2]), 1),
+
+  r(2),
+  o(hp(bmaj[1]), 1),
+  o(hp(bmaj[2]), 1),
+
+  r(8),
+  
+  //
+
+  r(1),
+  o(hp(emaj[1]), 1),
+  o(hp(emaj[2]), 2, 0.5),
+
+  r(1),
+  o(hp(bmaj[1]), 1),
+  o(hp(bmaj[2]), 2, 0.5),
+
+  r(8),
+
+  ////
+  
+  r(32),
+
+  ////
+
+  r(1),
+  o(hp(emaj[1]), 1),
+  o(hp(emaj[2]), 2, 0.5),
+
+  r(1),
+  o(hp(bmaj[1]), 1),
+  o(hp(bmaj[2]), 2, 0.5),
+
+  r(8),
+  
+  //
+
+  r(1),
+  o(hp(emaj[1]), 1),
+  o(hp(emaj[2]), 2, 0.5),
+
+  r(1),
+  o(bmaj[1], 1),
+  o(bmaj[2], 2, 0.5),
+
+  r(8),
+]
+
+b.pushChordsMany(1, 0, "bass", bass, 0.3)
 
 run(b)
