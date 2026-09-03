@@ -5,7 +5,7 @@ import { registerInstruments } from "./instruments.ts"
 const b = new Builder()
 
 registerInstruments(b)
-b.addBars(60, 4, 25)
+b.addBars(60, 4, 26)
 
 const emaj = [e3, gs3, b3]
 const bmaj = [b2, ds3, fs3]
@@ -27,6 +27,10 @@ const chords: Chord[] = [
   c(amaj, 4, 0.8),
 ]
 b.pushChordsMany(3, 0, "rhythm", chords, 0.5)
+b.pushChords(24, "rhythm", [
+  r(2.1),
+  c(emaj, 2, 0.8),
+], 0.5)
 
 const lead: Chord[] = [
   // Offset to sit behind the beat
@@ -69,6 +73,10 @@ const lead: Chord[] = [
   r(0.5),
 ]
 b.pushChordsMany(2, 8, "lead", lead, 0.3)
+b.pushChords(24, "lead", [
+  r(1.1),
+  o(e4, 1, 0.25)
+], 0.3)
 
 // half pitch
 const hp = (p: Pitch): Pitch => {
@@ -88,7 +96,12 @@ const bass: Chord[] = [
   o(hp(bmaj[1]), 1),
   o(hp(bmaj[2]), 1),
 
-  r(8),
+  r(4),
+
+  r(1),
+  o(hp(gsmaj[2]), 1),
+  r(1),
+  o(hp(gsmaj[0]), 1),
   
   //
 
