@@ -1,4 +1,4 @@
-import { Builder } from "../tsesound/index.ts"
+import { Builder } from "tsesound/index.ts"
 
 export function registerInstruments(b: Builder): void {
   b.addSynth("lead", [

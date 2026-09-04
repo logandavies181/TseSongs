@@ -1,4 +1,4 @@
-import { Builder, c, Chord, o, Pitch, r, run } from "../tsesound/index.ts"
+import { Builder, c, Chord, o, Pitch, r, run } from "tsesound/index.ts"
 
 import { registerInstruments } from "./instruments.ts"
 

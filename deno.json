@@ -1,7 +1,8 @@
 {
   "imports": {
-    "@cliffy/command": "jsr:@cliffy/command@^1.1.0",
-    "@std/yaml": "jsr:@std/yaml@^1.1.0"
+    "@cliffy/command": "jsr:@cliffy/command@^1.2.1",
+    "@std/yaml": "jsr:@std/yaml@^1.2.0",
+    "tsesound/": "https://raw.githubusercontent.com/logandavies181/TseSound/refs/heads/main/"
   },
   "fmt": {
     "lineWidth": 120,
