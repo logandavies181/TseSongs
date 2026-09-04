@@ -21,7 +21,7 @@ WAV_FILE="$DIR.wav"
 TAG="$(echo "$DIR" | tr ' ' '-' | tr '[:upper:]' '[:lower:]')-$(date +%Y-%m-%d)"
 
 echo "Rendering $WAV_FILE from songs/$DIR/main.ts..."
-deno task -A "songs/$DIR/main.ts" perform -o "$WAV_FILE"
+deno run -A "songs/$DIR/main.ts" perform -o "$WAV_FILE"
 
 echo "Creating git tag $TAG..."
 git tag "$TAG"
