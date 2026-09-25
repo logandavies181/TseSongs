@@ -1,5 +1,7 @@
 import { Builder, c, Chord, o, Pitch, r, run } from "tsesound/index.ts"
 
+import "tsesoundGlobalDef"
+
 import { registerInstruments } from "./instruments.ts"
 
 const b = new Builder()

@@ -2,7 +2,9 @@
   "imports": {
     "@cliffy/command": "jsr:@cliffy/command@^1.2.1",
     "@std/yaml": "jsr:@std/yaml@^1.2.0",
-    "tsesound/": "https://raw.githubusercontent.com/logandavies181/TseSound/refs/heads/main/"
+    "tsesound/": "https://raw.githubusercontent.com/logandavies181/TseSound/refs/heads/main/",
+    "tsesoundGlobalDef": "https://raw.githubusercontent.com/logandavies181/TseSound/refs/heads/main/gen/global.ts",
+    "tsesoundNotes440": "https://raw.githubusercontent.com/logandavies181/TseSound/refs/heads/main/gen/notes440.ts"
   },
   "fmt": {
     "lineWidth": 120,
